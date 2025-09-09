@@ -1,0 +1,20 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+---
+
+<header>
+  <nav>
+    <a class="user_profile_icon" href="/"><i class="ti ti-cloud-code"></i></a>
+
+    <button class="menu-toggle" aria-label="Abrir menú">
+      <i class="ti ti-menu-4"></i>
+    </button>
+
+    <ul class="menu">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/about">Acerca</a></li>
+      <li><a href="/contact">Contacto</a></li>
+      <li><ThemeToggle /></li>
+    </ul>
+  </nav>
+</header>
