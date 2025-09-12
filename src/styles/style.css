@@ -19,6 +19,8 @@
   --big-icon-size: 32px;
   --normal-icon-size: 24px;
 
+  --fw-800: 800;
+  --fw-700: 700;
   --fw-600: 600;
   --fw-500: 500;
   --fw-400: 400;
@@ -40,23 +42,29 @@
   --secondary-color: #e5e5e5;
   --bg-color: #fff;
   --text-color: rgba(0, 0, 0, 1);
-  --text-body-color: rgba(104,104,104, 1);
+  --text-body-color: rgba(104, 104, 104, 1);
   --text-hover: #484848;
+  --button-color: #f6f6f6;
+  --button-hover: #eeeeee;
+  --button-border: #e5e5e5;
 
   --border-primary: #999999;
   --border-secondary: #dddddd;
 }
 
 .dark {
-  --principal-color: #00d2d2;
+  --principal-color: #02d0d2;
   --main-color: #000;
   --secondary-color: #282828;
   --bg-color: #181818;
   --text-color: #fff;
-  --text-body-color: rgba(163,163,163, 1);
+  --text-body-color: rgba(163, 163, 163, 1);
   --text-hover: #cfcfcf;
   --border-primary: #444444;
   --border-secondary: #333333;
+  --button-color: #222222;
+  --button-hover: #2a2a2a;
+  --button-border: #333333;
 }
 
 html {
@@ -310,7 +318,7 @@ nav a:active {
 footer {
   display: block;
   text-align: center;
-  padding: 1rem 0;
+  padding: 2rem 0 1rem 0;
   background-color: var(--secondary-color);
 }
 
@@ -371,4 +379,132 @@ footer .links a:hover {
 footer p {
   font-size: var(--tiny);
   font-weight: var(--fw-300);
+}
+
+/* ===== ERROR 404 ===== */
+.error-404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  padding: 0 2rem;
+}
+
+.error-404 h1 {
+  font-size: clamp(calc(var(--h1) * 4), 20vw, calc(var(--h1) * 8));
+  line-height: 0.75;
+  color: var(--text-color);
+  font-weight: var(--fw-700);
+  letter-spacing: clamp(-2.25rem, -2vw, -0.125rem);
+}
+
+.error-404 .title h1 > span {
+  text-shadow: -8px 0px 0px var(--main-color);
+}
+
+.error-404 h2 {
+  font-size: clamp(24px, 5vw, 32px);
+  color: var(--text-color);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.1;
+  -webkit-text-stroke: 1px var(--main-color);
+  text-shadow: -1px 0 0 var(--main-color), -1px 0.5px 0 var(--main-color), -1px -0.5px 0 var(--main-color);
+}
+
+.error-404 h2 i {
+  -webkit-text-stroke: 0px var(--main-color);
+}
+
+.error-404 p {
+  font-size: var(--title);
+  margin: 0 0 4rem 0;
+  padding: 0;
+}
+
+.error-404 a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: var(--title);
+  color: var(--text-color);
+  padding: 0.5rem 1.5rem;
+  background-color: var(--button-color);
+  border: 1px solid var(--button-border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: background-color var(--transition) ease, box-shadow var(--transition) ease, transform var(--transition) ease, border-color var(--transition) ease;
+}
+
+.error-404 a:hover {
+  background-color: var(--button-hover);
+  border-color: var(--principal-color);
+  /* box-shadow: 0 0 5px var(--principal-color), 0 0 10px var(--principal-color), 0 0 40px var(--principal-color), 0 0 60px var(--principal-color); */
+}
+
+.error-404 a:active {
+  transform: scale(0.95);
+}
+
+.error-404 a svg {
+  width: 22px;
+  height: 22px;
+  transition: color var(--transition) ease;
+}
+
+.error-404 a:hover svg {
+  stroke: var(--principal-color);
+  stroke-width: 0.25px;
+}
+
+.error-404 a:hover .star-1,
+.error-404 a:hover .star-2,
+.error-404 a:hover .star-3 {
+  animation: spark 1.25s ease-in-out forwards;
+  animation-delay: var(--st);
+}
+
+.error-404 a:hover .star-1 {
+  transform-origin: 17px 5px;
+}
+
+.error-404 a:hover .star-2 {
+  transform-origin: 8px 12px;
+}
+
+.error-404 a:hover .star-3 {
+  transform-origin: 18px 18px;
+}
+
+@keyframes spark {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  80% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+
+  85% {
+    transform: rotate(0);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .error-404 a:hover .star-1,
+  .error-404 a:hover .star-2,
+  .error-404 a:hover .star-3 {
+    animation: none;
+  }
 }
