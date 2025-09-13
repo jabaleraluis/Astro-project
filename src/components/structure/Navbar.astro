@@ -3,7 +3,7 @@ import ThemeToggle from "./ThemeToggle.astro";
 ---
 
 <header>
-  <nav>
+  <nav class="navbar">
     <a class="user_profile_icon" href="/"><i class="ri-code-s-slash-line"></i></a>
 
     <button class="menu-toggle" aria-label="Abrir menú">
@@ -11,9 +11,10 @@ import ThemeToggle from "./ThemeToggle.astro";
     </button>
 
     <ul class="menu">
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/about">Acerca</a></li>
-      <li><a href="/contact">Contacto</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/services">Services</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
       <li><ThemeToggle /></li>
     </ul>
   </nav>
