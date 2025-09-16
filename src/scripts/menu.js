@@ -1,4 +1,4 @@
-export function menuToggle(toggleSelector, menuSelector) {
+export default function menuToggle(toggleSelector, menuSelector) {
   const toggle = document.querySelector(toggleSelector);
   const menu = document.querySelector(menuSelector);
   if (!toggle || !menu) return;
