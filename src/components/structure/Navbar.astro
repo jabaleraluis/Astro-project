@@ -2,20 +2,23 @@
 import ThemeToggle from "./ThemeToggle.astro";
 ---
 
-<header>
-  <nav class="navbar">
+<div class="navbar-header">
+  <nav class="navbar-container">
     <a class="user_profile_icon" href="/"><i class="ri-code-s-slash-line"></i></a>
 
-    <button class="menu-toggle" aria-label="Abrir menú">
-      <i class="ri-menu-line"></i>
+    <button class="toggle-btn">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
     </button>
 
-    <ul class="menu">
+    <ul class="nav-links">
       <li><a href="/">Home</a></li>
       <li><a href="/services">Services</a></li>
       <li><a href="/about">About</a></li>
       <li><a href="/contact">Contact</a></li>
+      <div class="separator"></div>
       <li><ThemeToggle /></li>
     </ul>
   </nav>
-</header>
+</div>
