@@ -1,10 +1,10 @@
 ---
-import "../styles/style.css";
 import Global from "@components/global.astro";
+import "../styles/404.css";
 ---
 
 <head>
-  <Global title="404" />
+  <Global title="404" description="error 404" />
 </head>
 
 <div class="error-404">
@@ -30,4 +30,6 @@ import Global from "@components/global.astro";
   </a>
 </div>
 
-<script type="module" src="/src/scripts/script.js"></script>
+<script src="/src/scripts/script.js">
+  setTheme(savedTheme);
+</script>

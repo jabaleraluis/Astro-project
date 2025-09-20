@@ -1,36 +1,23 @@
-/* export default function menuToggle(toggleSelector, menuSelector) {
-  const toggle = document.querySelector(toggleSelector);
-  const menu = document.querySelector(menuSelector);
-  if (!toggle || !menu) return;
-
-  toggle.addEventListener("click", () => {
-    menu.classList.toggle("active");
-  });
-} */
-
-/* export default function menuToggle(toggle_btn, menu) {
-  const $toggle_btn = document.querySelector(".navbar .menu-toggle i");
-  const $menu = document.querySelector(".navbar .menu");
-
-  $toggle_btn.addEventListener("click", () => {
-    $menu.classList.toggle("active");
-  });
-
-} */
-
 export default function menuToggle(toggle_btn, menu, links) {
   const d = document,
-    active_links = d.querySelectorAll(links),
-    location = window.location.href;
+    $active_links = d.querySelectorAll(links),
+    location = window.location.href,
+    $toggle_btn = d.querySelector(toggle_btn),
+    $menu = d.querySelector(menu);
 
   d.addEventListener("click", (e) => {
     if (e.target.matches(toggle_btn) || e.target.matches(`${toggle_btn} *`)) {
-      d.querySelector(toggle_btn).classList.toggle("active");
-      d.querySelector(menu).classList.toggle("active");
+      $toggle_btn.classList.toggle("active");
+      $menu.classList.toggle("collapsed");
+    } else if (!e.target.closest(menu) && !e.target.closest(toggle_btn)) {
+      if ($menu.classList.contains("collapsed")) {
+        $menu.classList.remove("collapsed");
+        $toggle_btn.classList.remove("active");
+      }
     }
   });
 
-  active_links.forEach((link) => {
+  $active_links.forEach((link) => {
     if (link.href === location) {
       link.classList.add("active");
     } else {

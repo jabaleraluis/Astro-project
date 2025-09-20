@@ -1,4 +1,4 @@
-import themeToggle from "/src/scripts/theme-toggle.js";
+import themeToggle from "../scripts/theme-toggle.js";
 import menuToggle from "../scripts/menu.js";
 
 document.addEventListener("DOMContentLoaded", (e) => {
