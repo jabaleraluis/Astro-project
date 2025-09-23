@@ -2,22 +2,22 @@
 import ThemeToggle from "./ThemeToggle.astro";
 ---
 
-<div class="navbar-header">
-  <nav class="navbar-container">
-    <a class="user_profile_icon" href="/"><i class="ri-code-s-slash-line"></i></a>
+<div class="navbar__header">
+  <nav class="navbar__container">
+    <a class="user__profile__icon" href="/"><i class="ri-code-s-slash-line"></i></a>
 
-    <button class="toggle-btn">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+    <button class="navbar__toggle__btn">
+      <span class="toggle__bar"></span>
+      <span class="toggle__bar"></span>
+      <span class="toggle__bar"></span>
     </button>
 
-    <ul class="nav-links">
+    <ul class="navbar__links">
       <li><a href="/">Home</a></li>
       <li><a href="/services">Services</a></li>
       <li><a href="/about">About</a></li>
       <li><a href="/contact">Contact</a></li>
-      <div class="separator"></div>
+      <div class="links__separator"></div>
       <li><ThemeToggle /></li>
     </ul>
   </nav>

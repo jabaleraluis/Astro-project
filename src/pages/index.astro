@@ -4,24 +4,30 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Home" description="Página principal">
   <section class="home__section">
-    <!-- <div class="home__header">
+    <div class="home__header">
       <div class="header__presentation">
         <div class="presentation__title">
-          <h2>Hello!</h2>
-          <h3>I'm Luis</h3>
-          <h1>Software Engineer</h1>
+          <h2>¡Hello!</h2>
+          <div class="name__line">
+            <div class="line"></div>
+            <h3>I'm Luis Jabalera</h3>
+          </div>
+          <h1>Software Developer</h1>
         </div>
         <div class="presentation__buttons">
-          <button>Want to know me more</button>
-          <button>My resume</button>
+          <a href="#" class="knowme-btn">
+            <div class="border__button"></div>
+            Want to know me more
+          </a>
+          <a href="#" class="resume-btn">My resume</a>
         </div>
       </div>
       <div class="header__picture">
-        <div class="picture__background">
-          <img src="src/assets/index/man.png" alt="" />
-        </div>
+        <!-- <div class="picture__background"> -->
+        <img class="picture" src="src/assets/index/man.png" alt="" />
         <div class="background__circle"></div>
+        <!-- </div> -->
       </div>
-    </div> -->
+    </div>
   </section>
 </Layout>

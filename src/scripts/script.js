@@ -1,7 +1,7 @@
-import themeToggle from "../scripts/theme-toggle.js";
-import menuToggle from "../scripts/menu.js";
+import themeSwitcher from "./theme_switcher.js";
+import navbarMenuToggle from "./navbar_menu_toggle.js";
 
 document.addEventListener("DOMContentLoaded", (e) => {
-  themeToggle(".theme-switcher .icon");
-  menuToggle(".navbar-container .toggle-btn", ".navbar-container .nav-links", ".navbar-container .nav-links a");
+  themeSwitcher(".theme__switcher .theme__icon");
+  navbarMenuToggle(".navbar__container .navbar__toggle__btn", ".navbar__container .navbar__links", ".navbar__container .navbar__links a");
 });
