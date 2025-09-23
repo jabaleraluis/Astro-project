@@ -1,5 +1,5 @@
 /* ===== ERROR 404 ===== */
-.error-404 {
+.error__404 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,19 +10,19 @@
   padding: 0 2rem;
 }
 
-.error-404 h1 {
-  font-size: clamp(calc(var(--fs-h1) * 4), 20vw, calc(var(--fs-h1) * 8));
+.error__404 .error__text h1 {
+  font-size: clamp(calc(var(--fs-header) * 4), 20vw, calc(var(--fs-header) * 8));
   line-height: 0.75;
   color: var(--text-color);
   font-weight: var(--fw-700);
   letter-spacing: clamp(-2.25rem, -2vw, -0.125rem);
 }
 
-.error-404 .title h1 > span {
+.error__404 .error__text h1 > span {
   text-shadow: -8px 0px 0px var(--main-color);
 }
 
-.error-404 h2 {
+.error__404 .error__title {
   font-size: clamp(24px, 5vw, 32px);
   color: var(--text-color);
   margin: 0 0 1.5rem 0;
@@ -31,23 +31,23 @@
   text-shadow: -1px 0 0 var(--main-color), -1px 0.5px 0 var(--main-color), -1px -0.5px 0 var(--main-color);
 }
 
-.error-404 h2 i {
+.error__404 .error__title i {
   -webkit-text-stroke: 0px var(--main-color);
 }
 
-.error-404 p {
-  font-size: var(--fs-h3);
+.error__404 .error__message {
+  font-size: var(--fs-subheader);
   color: var(--text-body-color);
   margin: 1rem 0 3rem 0;
   padding: 0;
 }
 
-.error-404 a {
+.error__404 .error__btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   gap: 0.25rem;
-  font-size: var(--fs-h3);
+  font-size: var(--fs-subheader);
   color: var(--text-color);
   padding: 0.5rem 1.5rem;
   background-color: var(--button-color);
@@ -65,31 +65,31 @@
   }
 }
 
-.error-404 a svg {
+.error__404 .error__btn svg {
   width: 22px;
   height: 22px;
   transition: color var(--transition) ease;
 }
 
-.error-404 a:hover svg {
+.error__404 .error__btn:hover svg {
   stroke: var(--dark-green-color);
   stroke-width: 0.25px;
 }
 
-.error-404 a:hover [class*="star-"] {
+.error__404 .error__btn:hover [class*="btn__star-"] {
   animation: spark 1.25s ease-in-out forwards;
-  animation-delay: var(--st);
+  animation-delay: var(--star-delay);
 }
 
-.error-404 a:hover .star-1 {
+.error__404 .error__btn:hover .btn__star-1 {
   transform-origin: 17px 5px;
 }
 
-.error-404 a:hover .star-2 {
+.error__404 .error__btn:hover .btn__star-2 {
   transform-origin: 8px 12px;
 }
 
-.error-404 a:hover .star-3 {
+.error__404 .error__btn:hover .btn__star-3 {
   transform-origin: 18px 18px;
 }
 
@@ -116,7 +116,7 @@
 }
 
 @media (max-width: 768px) {
-  .error-404 a:hover [class*="star-"] {
+  .error__404 .error__btn:hover [class*="btn__star-"] {
     animation: none;
   }
 }
