@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Home" description="Página principal">
+  <!-- ========== HOME SECTION ========== -->
   <section class="home__section">
     <div class="home__header">
       <div class="header__presentation">
@@ -17,17 +18,40 @@ import Layout from "../layouts/Layout.astro";
         <div class="presentation__buttons">
           <a href="#" class="knowme-btn">
             <div class="border__button"></div>
-            Want to know me more
+            Got a project?
           </a>
           <a href="#" class="resume-btn">My resume</a>
         </div>
       </div>
       <div class="header__picture">
-        <!-- <div class="picture__background"> -->
         <img class="picture" src="src/assets/index/man.png" alt="" />
-        <div class="background__circle"></div>
-        <!-- </div> -->
+        <div class="background">
+          <div class="neon__background"></div>
+          <div class="background__circle"></div>
+        </div>
+        <div class="arrows">
+          <svg class="arrow__left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <defs>
+              <linearGradient id="grad-top" x1="0%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" stop-color="var(--principal-color)" stop-opacity="0"></stop>
+                <stop offset="90%" stop-color="var(--principal-color)" stop-opacity="1"></stop>
+              </linearGradient>
+            </defs>
+            <path d="M10.8284 12.0007L15.7782 16.9504L14.364 18.3646L8 12.0007L14.364 5.63672L15.7782 7.05093L10.8284 12.0007Z" fill="url(#grad-top)"></path>
+          </svg>
+          <svg class="arrow__right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <defs>
+              <linearGradient id="grad-bottom" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="var(--principal-color)" stop-opacity="0"></stop>
+                <stop offset="90%" stop-color="var(--principal-color)" stop-opacity="1"></stop>
+              </linearGradient>
+            </defs>
+            <path d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z" fill="url(#grad-bottom)"></path>
+          </svg>
+        </div>
       </div>
     </div>
   </section>
+  <!-- ========== ? SECTION ========== -->
+  <section></section>
 </Layout>
