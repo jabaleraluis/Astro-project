@@ -135,7 +135,7 @@ a {
 /* ===== Layout ===== */
 main {
   flex-grow: 1;
-  padding: 1rem clamp(1rem, 2vw, 2rem);
+  /* padding: 1rem clamp(1rem, 2vw, 2rem); */
 }
 
 main h1 {
@@ -509,7 +509,9 @@ footer .footer__copyright {
   min-height: 100%;
   display: flex;
   margin: 0 auto;
-  padding: 1rem 0 0 0;
+  overflow-y: hidden;
+  padding: 1rem clamp(1rem, 2vw, 2rem) 0 clamp(1rem, 2vw, 2rem);
+  /* border-bottom: 2px solid var(--border-primary); */
 }
 
 .home__header {
@@ -580,7 +582,6 @@ footer .footer__copyright {
   border: 2px solid transparent;
   background-color: transparent;
   text-align: center;
-  /* border-radius: var(--border-radius); */
   padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 2rem);
   transition: transform var(--transition) ease, box-shadow var(--transition) ease;
   &:active {
@@ -603,7 +604,6 @@ footer .footer__copyright {
   border: 2px solid var(--principal-color);
   top: 0;
   left: 0;
-  /* border-radius: var(--border-radius); */
   transition: transform var(--transition) ease;
 }
 
@@ -636,16 +636,7 @@ footer .footer__copyright {
   z-index: 2;
 }
 
-.header__picture .background {
-  position: absolute;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-  /* width: 100%;
-  height: auto; */
-}
-
-.header__picture .background .neon__background {
+.header__picture .neon__background {
   position: absolute;
   width: 100%;
   max-width: clamp(250px, 40vw, 400px);
@@ -658,8 +649,8 @@ footer .footer__copyright {
   z-index: 0;
 }
 
-.header__picture .background .background__circle {
-  /* position: absolute; */
+.header__picture .background__circle {
+  position: absolute;
   width: clamp(250px, 30vw, 350px);
   height: clamp(250px, 30vw, 350px);
   border: 2rem solid var(--principal-color);
@@ -678,8 +669,9 @@ footer .footer__copyright {
 .header__picture .arrow__left,
 .header__picture .arrow__right {
   position: absolute;
-  width: clamp(calc(var(--fs-icon-xl) * 3), 15vw, calc(var(--fs-icon-xl) * 4));
-  height: clamp(calc(var(--fs-icon-xl) * 3), 15vw, calc(var(--fs-icon-xl) * 4));
+  width: clamp(calc(var(--fs-icon-xl) * 3.5), 15vw, calc(var(--fs-icon-xl) * 4.5));
+  height: clamp(calc(var(--fs-icon-xl) * 3.5), 15vw, calc(var(--fs-icon-xl) * 4.5));
+  stroke-width: 10px;
   filter: drop-shadow(2px 2px 0px var(--main-color));
   z-index: 2;
 }
@@ -728,4 +720,82 @@ footer .footer__copyright {
   .header__picture {
     width: 100%;
   }
+}
+
+/* ========== TAGLINE ========== */
+.tagline__section {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  background-color: var(--secondary-color);
+  border-top: 1px solid var(--border-primary);
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.tagline__section .tagline {
+  display: inline-block;
+  color: transparent;
+  font-weight: var(--fw-500);
+  background: linear-gradient(-30deg, var(--text-body-color) 70%, var(--text-color), var(--text-body-color) 75%) right/400%;
+  background-clip: text;
+  background-repeat: repeat;
+  animation: shimmer 6s linear infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    background-position: left;
+  }
+}
+
+/* ========== GOAL ========== */
+.goals__section {
+  display: flex;
+  width: 100%;
+  padding: 1rem clamp(1rem, 2vw, 2rem);
+  margin: 2rem 0;
+}
+
+.goals__section .highlights__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  min-height: 200px;
+  gap: 1rem;
+}
+
+.highlights__container .timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: auto;
+  height: 100%;
+  gap: 0.25rem;
+}
+
+.highlights__container .timeline .lines {
+  width: 5px;
+  height: 25%;
+  background-color: #e66;
+  border-radius: var(--border-radius);
+}
+
+.highlights__container .timeline .points {
+  width: 5px;
+  height: 5px;
+  aspect-ratio: 1 / 1;
+  background-color: #e66;
+  border-radius: 50%;
+}
+
+.highlights__container .highlights {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+  height: 100%;
+  /* gap: 1rem; */
 }
