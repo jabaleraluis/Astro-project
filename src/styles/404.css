@@ -54,7 +54,7 @@
   border: 1px solid var(--button-border);
   border-radius: 8px;
   overflow: hidden;
-  transition: background-color var(--transition) ease, box-shadow var(--transition) ease, transform var(--transition) ease, border-color var(--transition) ease;
+  transition: background-color var(--tr-sm) ease, box-shadow var(--tr-sm) ease, transform var(--tr-sm) ease, border-color var(--tr-sm) ease;
   &:hover {
     background-color: var(--button-hover);
     border-color: var(--principal-color);
@@ -68,7 +68,7 @@
 .error__404 .error__btn svg {
   width: 22px;
   height: 22px;
-  transition: color var(--transition) ease;
+  transition: color var(--tr-sm) ease;
 }
 
 .error__404 .error__btn:hover svg {
