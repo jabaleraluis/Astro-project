@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ScrollUp from "@components/structure/ScrollUp.astro";
 ---
 
 <Layout description="Homepage">
@@ -24,9 +25,13 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
       <div class="header__picture">
-        <img class="picture" src="src/assets/index/man.png" alt="" />
-        <div class="neon__background"></div>
-        <div class="background__circle"></div>
+        <div class="picture">
+          <img src="src/assets/index/man.png" alt="" />
+        </div>
+        <div class="background">
+          <div class="neon__background"></div>
+          <div class="background__circle"></div>
+        </div>
         <div class="arrows">
           <svg class="arrow__left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
             <defs>
@@ -95,11 +100,108 @@ import Layout from "../layouts/Layout.astro";
   </section>
 
   <!-- ========== TECH STACK PREVIEW ========== -->
-   <section class="tech__preview">
+  <section class="tech__preview">
     <div class="preview__container">
-      <h1>Some of my favourites tech</h1>
-      <p>hacer un carousel o slider</p>
+      <h1 class="title">Tech I like<i class="ri ri-heart-fill"></i></h1>
+      <div class="slider">
+        <div class="slide-track">
+          <div class="slide">
+            <div class="tech-item">
+              <img src="src/assets/index/teck_stack/frontend/HTML.svg" alt="" />
+              <h2>HTML</h2>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="tech-item">
+              <img src="src/assets/index/teck_stack/frontend/CSS.svg" alt="" />
+              <h2>CSS</h2>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="tech-item">
+              <img src="src/assets/index/teck_stack/frontend/JavaScript.svg" alt="" />
+              <h2>JavaScript</h2>
+            </div>
+          </div>
+          <a class="slide" href="https://laravel.com/docs/12.x" target="_blank" rel="noopener noreferrer">
+            <div class="tech-item">
+              <img src="src/assets/index/teck_stack/backend/laravel.svg" alt="" />
+              <h2>Laravel</h2>
+            </div>
+          </a>
+          <a class="slide" href="https://www.java.com/en/download/manual.jsp" target="_blank" rel="noopener noreferrer">
+            <div class="tech-item">
+              <img src="src/assets/index/teck_stack/backend/java.svg" alt="" />
+              <h2>Java</h2>
+            </div>
+          </a>
+          <a class="slide" href="https://www.mysql.com/downloads/" target="_blank" rel="noopener noreferrer">
+            <div class="tech-item">
+              <img src="src/assets/index/teck_stack/backend/mysql.svg" alt="" />
+              <h2>MySQL</h2>
+            </div>
+          </a>
+          <div class="slide">
+            <a class="tech-item" href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">
+              <img src="src/assets/index/teck_stack/tools/vscode.svg" alt="" />
+              <h2>VS Code</h2>
+            </a>
+          </div>
+          <div class="slide">
+            <div class="tech-item">
+              <img src="src/assets/index/teck_stack/frontend/HTML.svg" alt="" />
+              <h2>HTML</h2>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="tech-item">
+              <img src="src/assets/index/teck_stack/frontend/CSS.svg" alt="" />
+              <h2>CSS</h2>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="tech-item">
+              <img src="src/assets/index/teck_stack/frontend/JavaScript.svg" alt="" />
+              <h2>JavaScript</h2>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="tech-item">
+              <img src="src/assets/index/teck_stack/backend/laravel.svg" alt="" />
+              <h2>Laravel</h2>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="tech-item">
+              <img src="src/assets/index/teck_stack/backend/java.svg" alt="" />
+              <h2>Java</h2>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="tech-item">
+              <img src="src/assets/index/teck_stack/backend/mysql.svg" alt="" />
+              <h2>MySQL</h2>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="tech-item">
+              <img src="src/assets/index/teck_stack/tools/vscode.svg" alt="" />
+              <h2>VS Code</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="see__all">
+        <a class="see__all-btn" href="/about#stack__section">See all <i class="ri-arrow-right-s-line"></i></a><!-- poner gap al hover -->
+      </div>
     </div>
-   </section>
+  </section>
+
   <!-- ========== RECENT WORKS SECTION ========== -->
+  <section class="works__section">
+    <div class="works__container"></div>
+  </section>
+
+  <!-- ========== RECENT WORKS SECTION ========== -->
+  <ScrollUp />
 </Layout>
