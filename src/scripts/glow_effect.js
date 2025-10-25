@@ -1,7 +1,7 @@
-/* export default function glowHover() {
-  const items = document.querySelectorAll(".tech__wrapper .tech-item");
+export default function glowEffect(items) {
+  const $items = document.querySelectorAll(items);
 
-  items.forEach(item => {
+  $items.forEach((item) => {
     item.addEventListener("mousemove", (e) => {
       const rect = item.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -11,4 +11,4 @@
       item.style.setProperty("--y", `${y}px`);
     });
   });
-} */
+}
