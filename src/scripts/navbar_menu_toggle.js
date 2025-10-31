@@ -3,7 +3,7 @@ export default function navbarMenuToggle(toggleBtn, menu, links) {
     $toggleBtn = d.querySelector(toggleBtn),
     $menu = d.querySelector(menu),
     $activeLinks = d.querySelectorAll(links),
-    location = window.location.href;
+    location = window.location.pathname;
 
   d.addEventListener("click", (e) => {
     if (e.target.matches(toggleBtn) || e.target.matches(`${toggleBtn} *`)) {
@@ -17,8 +17,17 @@ export default function navbarMenuToggle(toggleBtn, menu, links) {
     }
   });
 
+  d.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && $menu.classList.contains("collapsed")) {
+      $menu.classList.remove("collapsed");
+      $toggleBtn.classList.remove("active");
+    }
+  });
+
   $activeLinks.forEach((link) => {
-    if (link.href === location) {
+    const linkPath = new URL(link.href).pathname;
+
+    if (linkPath === location) {
       link.classList.add("active");
     } else {
       link.classList.remove("active");
