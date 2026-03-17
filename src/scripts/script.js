@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
   glowEffect(".slide-track .slide .tech-item");
 
   /* ===== SCROLL REVEAL ===== */
-  /* const sr = {
+  // const sr = {
   const sr = ScrollReveal({
     origin: "top",
     distance: "30px",
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     interval: 200,
     scale: 0.75,
   });
-  }; */
+  // };
 
 
 
