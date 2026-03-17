@@ -48,6 +48,7 @@
   --button-hover: #eeeeee;
   --button-border: #e5e5e5;
   --active-color: #e5e5e5;
+  --transparent: #ffffff00;
 
   --border-primary: #999999;
   --border-secondary: #dddddd;
@@ -80,6 +81,7 @@
   --button-hover: #2a2a2a;
   --button-border: #333333;
   --active-color: #323333;
+  --transparent: #00000000;
 
   --input-color: #0f0e0e;
   --input-border-color: #333232;
@@ -110,7 +112,7 @@ body {
   overflow-x: hidden;
   padding: 0;
   margin: 0;
-  transition: color var(--tr-sm) ease, background-color var(--tr-sm) ease, border-color var(--tr-sm) ease;
+  transition: color var(--tr-sm) ease, background-color var(--tr-sm) ease;
 }
 
 img {
@@ -136,6 +138,7 @@ a {
   margin: 0;
   user-select: none;
   text-decoration: none;
+  transition: color var(--tr-sm) ease;
 }
 
 ul,
@@ -190,6 +193,7 @@ header {
   border-bottom: 1px solid var(--border-primary);
   padding: 1rem clamp(1rem, 2vw, 2rem);
   z-index: 990;
+  transition: background-color var(--tr-sm) ease, border-color var(--tr-sm) ease;
 }
 
 .navbar__header .navbar__container {
@@ -209,6 +213,7 @@ header {
   background-color: inherit;
   border: none;
   cursor: pointer;
+  transition: background-color var(--tr-sm) ease;
   &:hover .toggle__bar {
     background-color: var(--text-hover);
   }
@@ -246,6 +251,7 @@ header {
   gap: 1rem;
   padding: 0;
   margin: 0;
+  transition: background-color var(--tr-sm) ease, transform var(--tr-sm) ease;
 }
 
 .navbar__links .links__separator {
@@ -253,12 +259,14 @@ header {
   width: 100%;
   color: var(--text-color);
   opacity: 0.5;
+  transition: color var(--tr-sm) ease;
 }
 
 .navbar__links li a {
   padding: 0.25rem 0.75rem;
   border: 1px solid transparent;
   border-radius: var(--border-radius);
+  transition: border-color var(--tr-sm) ease, background-color var(--tr-sm) ease, transform var(--tr-sm) ease, color var(--tr-sm) ease;
 }
 
 .navbar__links li a.active {
@@ -288,7 +296,6 @@ header {
     padding: 5rem clamp(1rem, 2vw, 2rem);
     border-left: 1px solid var(--border-primary);
     transform: translate(100%, 0);
-    transition: transform var(--tr-sm) ease;
   }
 
   .navbar__links .links__separator {
@@ -362,6 +369,7 @@ header {
   padding: 0.25rem;
   border: 1px solid var(--border-primary);
   border-radius: var(--rounded-radius);
+  transition: border-color var(--tr-sm) ease;
 }
 
 .theme__switcher .theme__icon {
@@ -391,6 +399,7 @@ header {
   cursor: inherit;
   border: none;
   outline: none;
+  transition: background-color var(--tr-sm) ease;
 }
 
 .theme__switcher .theme__icon.active button {
@@ -402,7 +411,7 @@ header {
   opacity: 0.5;
   line-height: 1.25;
   font-size: var(--fs-body);
-  transition: opacity var(--tr-sm) ease;
+  transition: opacity var(--tr-sm) ease, color var(--tr-sm) ease;
 }
 
 .theme__switcher .theme__icon .theme__tooltip {
@@ -417,7 +426,7 @@ header {
   border: 1px solid var(--border-secondary);
   opacity: 0;
   pointer-events: none;
-  transition: opacity var(--tr-sm) ease;
+  transition: opacity var(--tr-sm) ease, background-color var(--tr-sm) ease, border-color var(--tr-sm) ease;
 }
 
 .theme__switcher .theme__icon:hover button i,
@@ -439,6 +448,7 @@ footer {
   border-top: 1px solid var(--border-primary);
   background-color: var(--secondary-color);
   z-index: 999;
+  transition: border-color var(--tr-sm) ease, background-color var(--tr-sm) ease;
 }
 
 footer .footer__socials {
@@ -515,11 +525,13 @@ footer .footer__copyright {
   font-size: var(--fs-small);
   font-weight: var(--fw-300);
   color: var(--text-body-color);
+  /* transition: ; */
 }
 
 footer .footer__copyright .heart {
   color: var(--red-color);
   opacity: 0.75;
+  transition: color var(--tr-sm) ease;
 }
 
 /* ========== HOME ========== */
@@ -535,7 +547,7 @@ footer .footer__copyright .heart {
   justify-content: space-between;
   flex-wrap: wrap;
   /* gap: 5rem; */
-  max-width: 1750px;
+  max-width: 1440px;
   width: 100%;
   margin: 0 auto;
   overflow-x: visible;
@@ -572,6 +584,7 @@ footer .footer__copyright .heart {
   max-width: 150px;
   height: clamp(2px, 0.5vw, 5px);
   background-color: var(--principal-color);
+  transition: background-color var(--tr-sm) ease;
 }
 
 .header__presentation .presentation__title .name__line h3 {
@@ -603,7 +616,7 @@ footer .footer__copyright .heart {
   background-color: transparent;
   text-align: center;
   padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 2rem);
-  transition: transform var(--tr-sm) ease, box-shadow var(--tr-sm) ease;
+  transition: transform var(--tr-sm) ease, box-shadow var(--tr-sm) ease, background-color var(--tr-sm) ease, color var(--tr-sm) ease, border-color var(--tr-sm) ease;
   &:active {
     transform: scale(0.95);
   }
@@ -655,16 +668,16 @@ footer .footer__copyright .heart {
   background-color: var(--principal-color);
   transform: rotate(30deg);
   z-index: -2;
-  opacity: .75;
+  opacity: 0.75;
   animation: rotate 40s linear infinite;
-  filter: blur(.5px);
+  filter: blur(0.5px);
   box-shadow: 0 0 5px var(--principal-color), 0 0 15px var(--principal-color), 0 0 25px var(--principal-color);
-  transition: transform var(--tr-lg) ease;
+  transition: transform var(--tr-lg) ease, background-color var(--tr-sm) ease;
 }
 
-.header__picture:hover [class*="geometric__box-"] {
+/* .header__picture:hover [class*="geometric__box-"] {
   transform: scale(1.05) !important;
-}
+} */
 
 /* @keyframes up-down {
   0%, 100% {
@@ -683,6 +696,7 @@ footer .footer__copyright .heart {
   height: 25px;
   border: 3px solid var(--main-color);
   animation: rotate 20s linear infinite;
+  transition: border-color var(--tr-sm) ease;
 }
 
 .header__picture .geometric__box-1 {
@@ -754,7 +768,7 @@ footer .footer__copyright .heart {
   filter: blur(5rem);
   opacity: 0.75;
   z-index: 0;
-  transition: filter var(--tr-lg) ease;
+  transition: filter var(--tr-lg) ease, background var(--tr-sm) ease;
 }
 
 .header__picture:hover .background .neon__background {
@@ -769,7 +783,7 @@ footer .footer__copyright .heart {
   border-radius: var(--circle-radius);
   filter: drop-shadow(2px 2px 0px var(--main-color));
   z-index: 1;
-  transition: transform var(--tr-lg) ease;
+  transition: transform var(--tr-lg) ease, border-color var(--tr-sm) ease, filter var(--tr-sm) ease;
 }
 
 .header__picture:hover .background .background__circle {
@@ -791,7 +805,7 @@ footer .footer__copyright .heart {
   stroke-width: 10px;
   filter: drop-shadow(2px 2px 0px var(--main-color));
   z-index: 2;
-  transition: transform var(--tr-lg) ease;
+  transition: transform var(--tr-lg) ease, filter var(--tr-sm) ease;
 }
 
 .header__picture .arrow__left {
@@ -862,6 +876,7 @@ footer .footer__copyright .heart {
   background-color: var(--secondary-color);
   border-top: 1px solid var(--border-primary);
   border-bottom: 1px solid var(--border-primary);
+  transition: background-color var(--tr-sm) ease, border-color var(--tr-sm) ease;
 }
 
 .tagline__section .tagline {
@@ -873,6 +888,7 @@ footer .footer__copyright .heart {
   background-clip: text;
   background-repeat: repeat;
   animation: shimmer 6s linear infinite;
+  transition: background var(--tr-sm) ease;
 }
 
 @keyframes shimmer {
@@ -887,7 +903,7 @@ footer .footer__copyright .heart {
   justify-content: center;
   position: relative;
   width: 100%;
-  max-width: 1750px;
+  max-width: 1440px;
   gap: 1rem;
   padding: clamp(4rem, 8vw, 8rem) clamp(1rem, 2vw, 2rem);
   margin: 0 auto;
@@ -906,6 +922,7 @@ footer .footer__copyright .heart {
   opacity: 0.25;
   z-index: -1;
   filter: blur(100px);
+  transition: background-color var(--tr-sm) ease;
 }
 
 .overview__section .highlights__container {
@@ -934,6 +951,7 @@ footer .footer__copyright .heart {
   background-color: var(--principal-color);
   flex: 1;
   border-radius: var(--border-radius);
+  transition: background-color var(--tr-sm) ease;
 }
 
 .highlights__container .timeline__wrapper .points {
@@ -942,6 +960,7 @@ footer .footer__copyright .heart {
   aspect-ratio: 1 / 1;
   background-color: var(--principal-color);
   border-radius: 50%;
+  transition: background-color var(--tr-sm) ease;
 }
 
 .highlights__container .highlights__wrapper {
@@ -959,7 +978,7 @@ footer .footer__copyright .heart {
   font-size: var(--fs-subheader);
   font-weight: var(--fw-400);
   gap: clamp(0.5rem, 1vw, 1rem);
-  transition: transform var(--tr-lg) ease;
+  transition: transform var(--tr-lg) ease, color var(--tr-sm) ease;
 }
 
 .highlights__container .highlights__wrapper p:hover {
@@ -1039,6 +1058,7 @@ footer .footer__copyright .heart {
 
 .objectives__wrapper .objective h1 i {
   color: var(--principal-color);
+  transition: color var(--tr-sm) ease;
 }
 
 @media (max-width: 768px) {
@@ -1075,7 +1095,7 @@ footer .footer__copyright .heart {
 
 .stack__section .stack__container {
   width: 100%;
-  max-width: 1750px;
+  max-width: 1440px;
   position: relative;
   margin: 0 auto;
   text-align: center;
@@ -1094,6 +1114,7 @@ footer .footer__copyright .heart {
   opacity: 0.25;
   z-index: -1;
   filter: blur(100px);
+  transition: background var(--tr-sm) ease;
 }
 
 .stack__container .title {
@@ -1153,12 +1174,12 @@ footer .footer__copyright .heart {
   pointer-events: none;
   /* filter: blur(50px); */
   z-index: -1;
+  transition: color var(--tr-sm) ease, text-shadow var(--tr-sm) ease, text-stroke var(--tr-sm) ease;
 }
 
 .stack__wrapper .stack__category {
   display: flex;
   align-items: flex-start;
-  /* justify-content: center; */
   flex-direction: column;
   width: 85%;
 }
@@ -1173,7 +1194,6 @@ footer .footer__copyright .heart {
   text-align: start;
   font-size: var(--fs-header);
   line-height: 1.5;
-  /* margin: 0 0 1rem 0; */
 }
 
 .stack__category .tech__wrapper {
@@ -1184,7 +1204,6 @@ footer .footer__copyright .heart {
   grid-template-columns: repeat(3, minmax(220px, 1fr));
   gap: 1rem;
   width: 100%;
-  /* margin: 0 0 1rem 0; */
 }
 
 @media (max-width: 992px) {
@@ -1258,11 +1277,12 @@ footer .footer__copyright .heart {
   padding: 1rem;
   display: flex;
   align-items: center;
+  transition: background-color var(--tr-sm) ease;
 }
 
 .tech-item .icon img {
   min-width: var(--fs-icon-xl);
-  transition: transform var(--tr-sm) ease;
+  transition: transform var(--tr-sm) ease, filter var(--tr-sm) ease;
 }
 
 .dark img.github {
@@ -1310,11 +1330,12 @@ footer .footer__copyright .heart {
 
 .tech-item progress::-webkit-progress-bar {
   background-color: var(--secondary-color);
+  transition: background-color var(--tr-sm) ease;
 }
 
 .tech-item progress::-webkit-progress-value {
   background: linear-gradient(90deg, var(--principal-color), var(--pr2-color));
-  transition: width 0.4s ease;
+  transition: background var(--tr-sm) ease;
 }
 
 /* ====== SLIDER ====== */
@@ -1326,7 +1347,7 @@ footer .footer__copyright .heart {
 
 .tech__preview .preview__container {
   width: 100%;
-  max-width: 1750px;
+  max-width: 1440px;
   margin: 0 auto;
   text-align: center;
 }
@@ -1341,6 +1362,7 @@ footer .footer__copyright .heart {
 .tech__preview .preview__container .title i {
   color: var(--principal-color);
   /* -webkit-text-stroke: .25px var(--text-color); */
+  transition: color var(--tr-sm) ease;
 }
 
 .tech__preview .preview__container .title::before {
@@ -1352,6 +1374,7 @@ footer .footer__copyright .heart {
   height: 4px;
   background-color: var(--principal-color);
   z-index: -1;
+  transition: background-color var(--tr-sm) ease;
 }
 
 .preview__container .see__all {
@@ -1374,7 +1397,7 @@ footer .footer__copyright .heart {
   border-radius: var(--border-radius);
   overflow: hidden;
   z-index: 0;
-  transition: transform var(--tr-sm) ease, gap var(--tr-sm) ease;
+  transition: transform var(--tr-sm) ease, background-color var(--tr-sm) ease, border-color var(--tr-sm) ease;
 }
 
 .preview__container .see__all-btn::before {
@@ -1387,7 +1410,7 @@ footer .footer__copyright .heart {
   z-index: -2;
   filter: blur(1px);
   transform: translateY(70%);
-  transition: transform var(--tr-lg) ease;
+  transition: transform var(--tr-lg) ease, background-color var(--tr-sm) ease;
 }
 
 .preview__container .see__all-btn:hover::before {
@@ -1402,6 +1425,7 @@ footer .footer__copyright .heart {
   background-color: inherit;
   pointer-events: none;
   border-radius: 6px;
+  transition: background-color var(--tr-sm) ease;
 }
 
 .preview__container .see__all-btn:active {
@@ -1424,7 +1448,7 @@ footer .footer__copyright .heart {
   position: relative;
   max-width: 1750px;
   width: 100%;
-  margin: 2rem 0;
+  margin: 2rem 0.25rem;
 }
 
 .slider::before,
@@ -1436,8 +1460,10 @@ footer .footer__copyright .heart {
   height: 90px;
   z-index: 1;
   margin: 0.5rem 0;
+  opacity: 1;
   pointer-events: none;
-  background: linear-gradient(to right, var(--bg-color) 10%, transparent 50%);
+  background: linear-gradient(90deg, var(--bg-color), var(--transparent));
+  transition: background 0.3 ease;
 }
 
 .slider::after {
@@ -1478,7 +1504,7 @@ footer .footer__copyright .heart {
   backdrop-filter: blur(5px) saturate(150%);
   gap: 1rem;
   overflow: hidden;
-  transition: transform var(--tr-sm) ease;
+  transition: transform var(--tr-sm) ease, color var(--tr-sm) ease, border-color var(--tr-sm) ease, backdrop-filter var(--tr-sm) ease;
 }
 
 .slide .tech-item::before {
@@ -1494,7 +1520,7 @@ footer .footer__copyright .heart {
   filter: blur(20px);
   opacity: 0;
   z-index: -2;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, background-color var(--tr-sm) ease, color var(--tr-sm) ease;
 }
 
 .slide .tech-item::after {
@@ -1504,6 +1530,7 @@ footer .footer__copyright .heart {
   border-radius: 6px;
   background-color: var(--bg-color);
   z-index: -1;
+  transition: background-color var(--tr-sm) ease, color var(--tr-sm) ease;
 }
 
 .slide .tech-item:hover::before {
@@ -1531,7 +1558,7 @@ footer .footer__copyright .heart {
 
   .slider::before,
   .slider::after {
-    height: 60px;
+    height: 75px;
   }
 
   .slider .slide-track {
@@ -1575,7 +1602,7 @@ footer .footer__copyright .heart {
   aspect-ratio: 1 / 1;
   background-color: var(--button-color);
   border: 1px solid var(--button-border);
-  transition: transform var(--tr-sm) ease, border-color var(--tr-sm) ease, color var(--tr-sm) ease;
+  transition: transform var(--tr-sm) ease, border-color var(--tr-sm) ease, color var(--tr-sm) ease, background-color var(--tr-sm) ease;
 }
 
 .scroll__up .scroll__up-btn:hover {
@@ -1607,6 +1634,7 @@ footer .footer__copyright .heart {
   opacity: 0.25;
   z-index: -1;
   filter: blur(100px);
+  transition: background-color var(--tr-sm) ease;
 }
 
 .projects__section .projects__container {
@@ -1615,7 +1643,7 @@ footer .footer__copyright .heart {
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 1750px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -1633,6 +1661,7 @@ footer .footer__copyright .heart {
   font-weight: var(--fw-600);
   text-shadow: 1px 1px 0 var(--main-color);
   z-index: 1;
+  transition: text-shadow var(--tr-sm) ease;
   &::before {
     content: "";
     position: absolute;
@@ -1643,6 +1672,7 @@ footer .footer__copyright .heart {
     background-color: var(--principal-color);
     border-radius: 4px;
     z-index: -1;
+    transition: background-color var(--tr-sm) ease;
   }
 }
 
@@ -1653,7 +1683,23 @@ footer .footer__copyright .heart {
   justify-items: center;
   justify-content: space-between;
   width: 100%;
+  min-height: max-content;
   gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .projects__container .cards__container {
+    grid-template-columns: repeat(2, minmax(0, 375px));
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .projects__container .cards__container {
+    grid-template-columns: auto;
+    gap: 1rem;
+  }
 }
 
 .cards__container .card {
@@ -1661,34 +1707,41 @@ footer .footer__copyright .heart {
   flex-direction: column;
   padding: 1rem 2rem;
   height: 100%;
+  width: 100%;
   border: 1px solid var(--border-secondary);
   background-color: var(--secondary-color);
-  /* backdrop-filter: blur(5px) saturate(150%); */
   border-radius: var(--rounded-radius);
   transition: background-color var(--tr-sm) ease, transform var(--tr-sm) ease, border-color var(--tr-sm) ease;
   &:hover {
     background-color: var(--button-hover);
-    /* backdrop-filter: blur(20px) saturate(150%); */
-    transform: translateY(-4px);
+    /* transform: translateY(-4px); */
     border-color: var(--border-primary);
   }
 }
 
 .card .card-img {
   position: relative;
-  width: 100%;
-  height: clamp(125px, 15vw, 175px);
   margin: 1rem 0;
-  border-radius: 4px;
 }
 
-.card .card-img img {
+.card .img-wrapper {
+  border-radius: 4px;
+  height: clamp(125px, 15vw, 175px);
+  overflow: hidden;
+  /* border-bottom: 4px solid var(--principal-color); */
+}
+
+.card .card-img .img-wrapper img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  border-radius: 4px;
+  transition: transform var(--tr-lg) ease;
+}
+
+.card:hover .card-img .img-wrapper img {
+  transform: scale(1.05);
 }
 
 .card .card-img a {
@@ -1705,7 +1758,7 @@ footer .footer__copyright .heart {
   overflow: hidden;
   right: 1rem;
   background-color: var(--bg-color);
-  transition: transform var(--tr-sm) ease;
+  transition: transform var(--tr-sm) ease, color var(--tr-sm) ease, border-color var(--tr-sm) ease, background-color var(--tr-sm) ease;
   &:active {
     transform: scale(0.9);
   }
@@ -1749,6 +1802,7 @@ footer .footer__copyright .heart {
     height: 1px;
     width: 20%;
     background-color: var(--text-body-color);
+    transition: backgroud-color var(--tr-sm) ease;
   }
 }
 
@@ -1768,35 +1822,42 @@ footer .footer__copyright .heart {
 
 .card .buttons {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
+  margin-top: auto;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-start;
 }
 
 .card .buttons a {
   display: inline-flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 0.25rem;
   padding: 0.5rem;
-  width: 40px;
+  width: 41px;
+  height: 41px;
+  text-align: center;
   max-width: max-content;
   font-size: var(--fs-body);
-  font-weight: var(--fw-300);
+  font-weight: var(--fw-400);
   color: var(--text-color);
-  background-color: var(--main-color);
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-secondary);
   overflow: hidden;
   border-radius: var(--rounded-radius);
-  transition: width var(--tr-lg) ease, padding var(--tr-lg) ease;
+  transition: width var(--tr-lg) ease, padding var(--tr-lg) ease, background-color var(--tr-sm) ease, border-color var(--tr-sm) ease, color var(--tr-sm) ease;
 }
 
 .card .buttons a i {
   font-size: var(--fs-header);
+  flex-shrink: 0;
 }
 
 .card .buttons a span {
   opacity: 0;
+  white-space: nowrap;
   visibility: hidden;
-  transition: opacity var(--tr-lg) ease, visibility var(--tr-lg) ease;
+  transition: opacity var(--tr-sm) ease, visibility var(--tr-sm) ease;
 }
 
 .card .buttons a:hover span {
@@ -1805,6 +1866,6 @@ footer .footer__copyright .heart {
 }
 
 .card .buttons a:hover {
-  width: 115px;
+  width: 117px;
   padding: 0.5rem 1rem;
 }
