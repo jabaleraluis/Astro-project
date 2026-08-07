@@ -14,9 +14,21 @@ export default function scrollReveal() {
     cleanup: true,
   });
 
+  sr.reveal(`header`, {
+    delay: 500,
+  });
+
   sr.reveal(`.left-reveal-100`, {
     origin: 'left',
     interval: 100,
+  });
+
+  sr.reveal(`.left-reveal-100-delay`, {
+    origin: 'left',
+    interval: 200,
+    distance: "15px",
+    delay: 400,
+    // duration: 900
   });
 
   sr.reveal(`.left-reveal`, {
@@ -43,7 +55,7 @@ export default function scrollReveal() {
 
     sr.reveal('.bottom-reveal-200', {
       origin: 'bottom',
-      delay: 150,
+      delay: 200,
       interval: 200,
     });
   } else if (window.screenX < 768) {

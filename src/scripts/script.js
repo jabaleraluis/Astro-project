@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
   navbarMenuToggle(
     '.navbar__container .navbar__toggle__btn',
     '.navbar__container .navbar__links',
-    '.navbar__container .navbar__links a',
+    'section[id]',
   );
   scrollUp('.scroll__up');
   glowEffect('.slide-track .slide .tech-item');
